@@ -31,12 +31,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/books-no-pagination" data-navigo>Books - NO Pagination</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/grid" data-navigo>Grid-1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/grid-2" data-navigo>Grid-2</a>
-        </li>
       </ul>
     </div>
   </div>
