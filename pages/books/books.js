@@ -13,7 +13,10 @@ let isInitialized = false;
 export async function initBooks(match) {
   //TODO: Use the match argument to read the page, size and sort parameters from the query string 
   //and initialize pageSize, sortColumn and sortOrder accordingly
-  const page =  0
+  const page = match?.params?.page || 0
+  pageSize = match?.params?.size || pageSize
+  sortColumn = match?.params?.sort?.split(",")[0] || sortColumn
+  sortDirection = match?.params?.sort.split(",")[1] || "asc"
 
   if (!isInitialized) {  //No reason to setup event handlers if it's already been done
     isInitialized = true;
@@ -56,6 +59,8 @@ async function fetchData(page = 0) {
   displayPagination(data.totalPages, page);
 
   //TODO Update URL here,  without forcing an actual navigation step
+  const navigoRoute = "books"
+  window.router?.navigate(`/${navigoRoute}${queryString}`, { callHandler: false, updateBrowserURL: true })
   
 }
 
